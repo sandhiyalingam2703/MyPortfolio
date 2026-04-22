@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Portfolio — Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- Particles -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- Noise overlay -->
+<div class="noise-overlay"></div>
+
+<!-- ── NAV ──────────────────────────────────────────────────────────────── -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">&lt;<span>dev</span>/&gt;</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certificates">Certs</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Contact Me</a>
+  <button class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── HOME ─────────────────────────────────────────────────────────────── -->
+<section id="home">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <div class="hero-greeting">Hello, World!</div>
+      <h1 class="hero-name">
+        Your <span class="accent">Name</span><br/>Here
+      </h1>
+      <div class="hero-role">
+        &gt; <span id="typewriter"></span><span class="type-cursor"></span>
+      </div>
+      <p class="hero-desc">
+        I build clean, scalable, and performant digital experiences.
+        Passionate about turning complex problems into elegant solutions.
+        Open to opportunities and collaborations.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="#contact" class="btn-outline">Let's Talk</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float-badge">React.js</div>
+      <div class="float-badge">Node.js</div>
+      <div class="float-badge">TypeScript</div>
+      <div class="avatar-wrap">
+        <div class="avatar-ring"></div>
+        <div class="avatar-ring2"></div>
+        <div class="avatar-inner">👨‍💻</div>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div><div class="stat-num">2+</div><div class="stat-lbl">Years Exp</div></div>
+          </div>
+          <div class="stat-card">
+            <div><div class="stat-num">15+</div><div class="stat-lbl">Projects</div></div>
+          </div>
+          <div class="stat-card">
+            <div><div class="stat-num">10+</div><div class="stat-lbl">Certs</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ─────────────────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="section-label">01 — About</div>
+  <h2 class="section-title">Who <em>I Am</em></h2>
+  <div class="about-grid reveal">
+    <div class="about-img-wrap">
+      <div class="about-img-box">
+        <div class="about-corner tl"></div>
+        <div class="about-corner br"></div>
+        👤
+      </div>
+    </div>
+    <div class="about-text">
+      <p>Hi! I'm a <strong>Full Stack Developer</strong> with a passion for building modern, user-focused web applications. I love the intersection of design and technology — where beautiful interfaces meet robust engineering.</p>
+      <p>With experience across the full stack, I'm comfortable working with <strong>React, Node.js, TypeScript, and cloud platforms</strong>. I thrive in collaborative environments and enjoy turning ideas into production-ready products.</p>
+      <p>When I'm not coding, you'll find me exploring new technologies, contributing to open source, or experimenting with creative side projects.</p>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-key">Name</div>
+          <div class="info-val">Your Name</div>
+        </div>
+        <div class="info-item">
+          <div class="info-key">Location</div>
+          <div class="info-val">Chennai, India</div>
+        </div>
+        <div class="info-item">
+          <div class="info-key">Email</div>
+          <div class="info-val">you@email.com</div>
+        </div>
+        <div class="info-item">
+          <div class="info-key">Availability</div>
+          <div class="info-val" style="color:var(--green)">Open to Work ✓</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ─────────────────────────────────────────────────────────────── -->
+<section id="skills">
+  <div class="section-label">02 — Skills</div>
+  <h2 class="section-title">Tech <em>Stack</em></h2>
+
+  <div class="skills-tabs">
+    <button class="skill-tab active" onclick="switchTab('frontend',this)">Frontend</button>
+    <button class="skill-tab" onclick="switchTab('backend',this)">Backend</button>
+    <button class="skill-tab" onclick="switchTab('tools',this)">Tools & Cloud</button>
+  </div>
+
+  <div class="skills-grid">
+    <!-- FRONTEND -->
+    <div class="skill-group active" data-group="frontend">
+      <div class="skill-card reveal">
+        <div class="skill-top"><span class="skill-name">React.js</span><span class="skill-pct">90%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="90"></div></div>
+        <div class="skill-tag">Hooks · Context · Redux</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-top"><span class="skill-name">TypeScript</span><span class="skill-pct">85%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="85"></div></div>
+        <div class="skill-tag">Types · Generics · Decorators</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-top"><span class="skill-name">CSS / Tailwind</span><span class="skill-pct">92%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="92"></div></div>
+        <div class="skill-tag">Animations · Responsive · Grid</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-top"><span class="skill-name">Next.js</span><span class="skill-pct">80%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="80"></div></div>
+        <div class="skill-tag">SSR · SSG · App Router</div>
+      </div>
+    </div>
+
+    <!-- BACKEND -->
+    <div class="skill-group" data-group="backend">
+      <div class="skill-card reveal">
+        <div class="skill-top"><span class="skill-name">Node.js</span><span class="skill-pct">85%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="85"></div></div>
+        <div class="skill-tag">Express · REST · Middleware</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-top"><span class="skill-name">Python</span><span class="skill-pct">78%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="78"></div></div>
+        <div class="skill-tag">Django · FastAPI · Scripts</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-top"><span class="skill-name">PostgreSQL</span><span class="skill-pct">80%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="80"></div></div>
+        <div class="skill-tag">Queries · Joins · Indexing</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-top"><span class="skill-name">MongoDB</span><span class="skill-pct">75%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="75"></div></div>
+        <div class="skill-tag">Mongoose · Aggregation</div>
+      </div>
+    </div>
+
+    <!-- TOOLS -->
+    <div class="skill-group" data-group="tools">
+      <div class="skill-card reveal">
+        <div class="skill-top"><span class="skill-name">Git & GitHub</span><span class="skill-pct">92%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="92"></div></div>
+        <div class="skill-tag">Branching · CI/CD · PRs</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-top"><span class="skill-name">Docker</span><span class="skill-pct">72%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="72"></div></div>
+        <div class="skill-tag">Containers · Compose · Images</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-top"><span class="skill-name">AWS</span><span class="skill-pct">68%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="68"></div></div>
+        <div class="skill-tag">EC2 · S3 · Lambda</div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-top"><span class="skill-name">Figma</span><span class="skill-pct">78%</span></div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-w="78"></div></div>
+        <div class="skill-tag">Prototyping · Components</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ───────────────────────────────────────────────────────────── -->
+<section id="projects">
+  <div class="section-label">03 — Projects</div>
+  <h2 class="section-title">Selected <em>Work</em></h2>
+  <div class="projects-grid">
+
+    <div class="project-card reveal" style="--thumb-bg:#0d1f0d">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#0d1f0d,#1a3a1a)">🛒</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">React</span>
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">MongoDB</span>
+        </div>
+        <div class="project-title">E-Commerce Platform</div>
+        <p class="project-desc">A full-stack e-commerce solution with real-time inventory, WhatsApp order integration, and an admin dashboard for product management.</p>
+        <div class="project-links">
+          <a href="#" class="proj-link primary">Live Demo</a>
+          <a href="#" class="proj-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal" style="--thumb-bg:#0a1a24">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#0a1a24,#0d2a3a)">📊</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Next.js</span>
+          <span class="project-tag">TypeScript</span>
+          <span class="project-tag">Postgres</span>
+        </div>
+        <div class="project-title">Analytics Dashboard</div>
+        <p class="project-desc">Real-time analytics platform with interactive charts, customisable widgets, and role-based access control for enterprise teams.</p>
+        <div class="project-links">
+          <a href="#" class="proj-link primary">Live Demo</a>
+          <a href="#" class="proj-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#1a0d1f,#2a1a3a)">🤖</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">OpenAI</span>
+        </div>
+        <div class="project-title">AI Chat Assistant</div>
+        <p class="project-desc">Conversational AI assistant with memory, context retention, and custom persona configuration. Supports multiple LLM backends.</p>
+        <div class="project-links">
+          <a href="#" class="proj-link primary">Live Demo</a>
+          <a href="#" class="proj-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#1a1200,#2a2000)">📱</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">React Native</span>
+          <span class="project-tag">Firebase</span>
+        </div>
+        <div class="project-title">Task Management App</div>
+        <p class="project-desc">Cross-platform mobile app for team task management with real-time sync, push notifications, and offline support.</p>
+        <div class="project-links">
+          <a href="#" class="proj-link primary">App Store</a>
+          <a href="#" class="proj-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#001a1a,#002a2a)">🔒</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">Node.js</span>
+          <span class="project-tag">JWT</span>
+          <span class="project-tag">Redis</span>
+        </div>
+        <div class="project-title">Auth Microservice</div>
+        <p class="project-desc">Production-ready authentication service with OAuth2, JWT refresh tokens, rate limiting, and session management.</p>
+        <div class="project-links">
+          <a href="#" class="proj-link primary">Docs</a>
+          <a href="#" class="proj-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-thumb" style="background:linear-gradient(135deg,#0a180a,#142814)">🌐</div>
+      <div class="project-body">
+        <div class="project-tags">
+          <span class="project-tag">React</span>
+          <span class="project-tag">Three.js</span>
+          <span class="project-tag">GSAP</span>
+        </div>
+        <div class="project-title">3D Portfolio Website</div>
+        <p class="project-desc">Immersive 3D portfolio with WebGL animations, smooth scroll transitions, and custom particle effects.</p>
+        <div class="project-links">
+          <a href="#" class="proj-link primary">Live Demo</a>
+          <a href="#" class="proj-link">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ────────────────────────────────────────────────────────── -->
+<section id="experience">
+  <div class="section-label">04 — Experience</div>
+  <h2 class="section-title">Work <em>History</em></h2>
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-top">
+          <div class="exp-role">Senior Frontend Developer</div>
+          <div class="exp-period">Jan 2023 – Present</div>
+        </div>
+        <div class="exp-company">Tech Company Pvt. Ltd. · Full-time</div>
+        <div class="exp-desc">Led frontend architecture for a SaaS platform serving 50k+ users. Built reusable component libraries, improved Lighthouse score from 62 to 96, and mentored 3 junior developers.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">React</span><span class="exp-tag">TypeScript</span>
+          <span class="exp-tag">Next.js</span><span class="exp-tag">Tailwind</span><span class="exp-tag">GraphQL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-top">
+          <div class="exp-role">Full Stack Developer</div>
+          <div class="exp-period">Jun 2021 – Dec 2022</div>
+        </div>
+        <div class="exp-company">Startup Studio · Full-time</div>
+        <div class="exp-desc">Developed and shipped 4 client products end-to-end. Built REST APIs, integrated third-party payment gateways, and deployed on AWS with CI/CD pipelines.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Node.js</span><span class="exp-tag">Express</span>
+          <span class="exp-tag">React</span><span class="exp-tag">PostgreSQL</span><span class="exp-tag">AWS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="exp-card">
+        <div class="exp-top">
+          <div class="exp-role">Software Developer Intern</div>
+          <div class="exp-period">Jan 2021 – May 2021</div>
+        </div>
+        <div class="exp-company">Digital Agency · Internship</div>
+        <div class="exp-desc">Assisted in building client websites, implemented responsive designs from Figma prototypes, and wrote unit tests to improve code coverage by 40%.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">HTML/CSS</span><span class="exp-tag">JavaScript</span>
+          <span class="exp-tag">React</span><span class="exp-tag">Git</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── EDUCATION ─────────────────────────────────────────────────────────── -->
+<section id="education">
+  <div class="section-label">05 — Education</div>
+  <h2 class="section-title">Academic <em>Background</em></h2>
+  <div class="edu-grid">
+
+    <div class="edu-card reveal">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-degree">B.E. Computer Science & Engineering</div>
+      <div class="edu-school">Your University Name</div>
+      <div class="edu-year">2017 — 2021 · CGPA: 8.4</div>
+      <div class="edu-desc">Focused on data structures, algorithms, software engineering, and databases. Active member of the coding club and technical fest organiser.</div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-icon">📚</div>
+      <div class="edu-degree">Higher Secondary (Class XII)</div>
+      <div class="edu-school">Your School Name</div>
+      <div class="edu-year">2015 — 2017 · 94.2%</div>
+      <div class="edu-desc">Science stream with Computer Science as the main elective. Scored 98/100 in Computer Science board examination.</div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-icon">🏆</div>
+      <div class="edu-degree">Secondary School (Class X)</div>
+      <div class="edu-school">Your School Name</div>
+      <div class="edu-year">2015 · 95.8%</div>
+      <div class="edu-desc">State-level Science Olympiad participant. Developed first Python project — a simple calculator — during this period, sparking a lifelong passion for programming.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CERTIFICATES ───────────────────────────────────────────────────────── -->
+<section id="certificates">
+  <div class="section-label">06 — Certificates</div>
+  <h2 class="section-title">Credentials & <em>Achievements</em></h2>
+  <div class="cert-grid">
+
+    <div class="cert-card reveal">
+      <div class="cert-icon-wrap">☁️</div>
+      <div>
+        <div class="cert-name">AWS Certified Developer – Associate</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+        <div class="cert-year">2023 · Credential ID: ABC123XYZ</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon-wrap">⚛️</div>
+      <div>
+        <div class="cert-name">Meta React Developer Professional</div>
+        <div class="cert-issuer">Meta (Coursera)</div>
+        <div class="cert-year">2022 · Verified</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon-wrap">🐍</div>
+      <div>
+        <div class="cert-name">Python for Data Science & AI</div>
+        <div class="cert-issuer">IBM (Coursera)</div>
+        <div class="cert-year">2022 · Verified</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon-wrap">🔒</div>
+      <div>
+        <div class="cert-name">Google Cybersecurity Certificate</div>
+        <div class="cert-issuer">Google (Coursera)</div>
+        <div class="cert-year">2023 · Verified</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon-wrap">🧠</div>
+      <div>
+        <div class="cert-name">Deep Learning Specialisation</div>
+        <div class="cert-issuer">DeepLearning.AI</div>
+        <div class="cert-year">2023 · 5-Course Series</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon-wrap">🐳</div>
+      <div>
+        <div class="cert-name">Docker Certified Associate</div>
+        <div class="cert-issuer">Docker Inc.</div>
+        <div class="cert-year">2022 · Credential ID: DCA-2022</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon-wrap">📊</div>
+      <div>
+        <div class="cert-name">Google Data Analytics</div>
+        <div class="cert-issuer">Google (Coursera)</div>
+        <div class="cert-year">2021 · Verified</div>
+      </div>
+    </div>
+
+    <div class="cert-card reveal">
+      <div class="cert-icon-wrap">🌐</div>
+      <div>
+        <div class="cert-name">Full Stack Web Development</div>
+        <div class="cert-issuer">The Odin Project</div>
+        <div class="cert-year">2021 · Completed</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CONTACT ───────────────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="section-label" style="justify-content:center">07 — Contact</div>
+  <div class="contact-headline reveal">
+    Let's Build<br/><em>Something Great</em>
+  </div>
+  <p class="contact-sub reveal">
+    Whether you have a project in mind, a job opportunity, or just want to say hi — my inbox is always open.
+  </p>
+  <div class="contact-links reveal">
+    <a href="mailto:you@email.com" class="social-link">✉️ Email Me</a>
+    <a href="https://linkedin.com" target="_blank" class="social-link">💼 LinkedIn</a>
+    <a href="https://github.com" target="_blank" class="social-link">🐙 GitHub</a>
+    <a href="#" class="social-link">📄 Resume</a>
+    <a href="#" class="social-link">🐦 Twitter</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2024 &mdash; Built with ❤️ by Your Name. All rights reserved.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
